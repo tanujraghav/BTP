@@ -1,0 +1,49 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/btpDB
+    username: tanujraghav
+    password: 0
+    #url: jdbc:postgresql://jnusedbinstance.cx7czkxav6u2.ap-south-1.rds.amazonaws.com:3927/jnuseDB
+    #username: jnuseDBMaster
+    #password: P60TywRvlnrsjNj7AJ6h
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  servlet:
+    multipart:
+      max-file-size: 12MB
+      max-request-size: 12MB
+  mail:
+    protocol: smtp
+    host: mail.postale.io
+    port: 587
+    username: btp@tanujraghav.me
+    password: 8447d938de87aabe12e7a02031f27ffff5a18d32
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+cloud:
+  aws:
+    region:
+      static: ap-south-1
+    credentials:
+      access-key: AKIAVKX2MTIFI6WIFI4L
+      secret-key: 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
+    stack:
+      auto: false
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error
+    web: debug
+server:
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
+  http2:
+    enabled: true
